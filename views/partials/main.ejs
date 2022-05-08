@@ -1,0 +1,43 @@
+<div class="mainCont">
+  <div class="first">
+    <div class="quantity">
+      <h1>Quantity</h1>
+      <input id="fname" type="number" onchange="myFunction(this.value)" />
+    </div>
+  </div>
+  <div id="demo" class="second"></div>
+</div>
+
+<div id="demoLeft"></div>
+<div id="demoRight"></div>
+
+<script>
+  function myFunction(val) {
+    console.log(val);
+    let inputNum = val;
+    
+
+    let text = "<div class='items'>";
+    for (let i = 0; i < inputNum; i++) {
+      text +=
+        "<div class='item'>" +
+        "<div class='num'>" +
+        [i + 1] +
+        "</div>" +
+        "</div>";
+    }
+    text += "</div";
+    document.getElementById("demo").innerHTML = text;
+    let textLeft
+    let textRight
+    if(inputNum>0){
+        textLeft = "<div>" + 'OBJ ' + 1 + "</div>"
+        textRight = "<div>" + 'OBJ ' + inputNum + "</div>"
+    }else{
+        textLeft = "<div>" + 'OBJ'+ "</div>"
+        textRight = "<div>" + 'OBJ' +  "</div>"
+    }
+    document.getElementById("demoLeft").innerHTML = textLeft;
+    document.getElementById("demoRight").innerHTML = textRight;
+  }
+</script>
